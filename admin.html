@@ -111,7 +111,7 @@
             <div class="page-header">
               <nav aria-label="breadcrumb">
                 <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addCustomerModal">
-                  <i class="fa fa-plus"></i> Yangi buyurtmachi
+                  <i class="fa fa-plus"></i> Yangi Admin
                 </button>
               </nav>
             </div>
@@ -119,60 +119,61 @@
             
             <div class="card">
               <div class="card-header d-block d-md-flex py-3">
-                <h5 class="mb-0">Buyurtmachilar</h5>
-                <p class="ms-auto mb-0">Barcha buyurtmachilar</p>
+                <h5 class="mb-0">Admin</h5>
+                <p class="ms-auto mb-0">Tizim administratorlar</p>
               </div>
               <div class="card-body">
-                
+                <table class="table table-bordered">
+                  <thead>
+                    <tr class="text-center">
+                      <th>#</th>
+                      <th>FIO</th>
+                      <th>Phone</th>
+                      <th>Email</th>
+                      <th>Deleted</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-center">#</td>
+                      <td>Elshod Musurmonov</td>
+                      <td>+998908830450</td>
+                      <td>elshodatc1116@gmail.com</td>
+                      <td class="text-center">
+                        <form action="#" method="post">
+                          <button class="btn btn-danger p-1"><i class="fa fa-trash"></i></button>
+                        </form>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
             <div class="modal fade" id="addCustomerModal" tabindex="-1" aria-labelledby="addCustomerModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="addCustomerModalLabel">Yangi Buyurtmachi Qo'shish</h5>
+                    <h5 class="modal-title" id="addCustomerModalLabel">Yangi Admin Qo'shish</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <form id="addCustomerForm">
                     <div class="modal-body">
-                      <div class="row">
-                        <div class="col-6">
-                          <div class="form-group">
-                            <label for="customerName">Buyurtmachi FIO</label>
-                            <input type="text" id="customerName" name="name" class="form-control" required />
-                          </div>
-                        </div>
-                        <div class="col-6">
-                          <div class="form-group">
-                            <label for="customerPhone">Telefon raqam</label>
-                            <input type="text" id="customerPhone" name="phone" value="+998" class="form-control phone" required>
-                          </div>
-                        </div>
+                      <div class="form-group">
+                        <label for="customerName">Admin FIO</label>
+                        <input type="text" id="customerName" name="name" class="form-control" required />
                       </div>
                       <div class="form-group">
-                        <label for="customerAddress">Yashash manzil</label>
-                        <input type="text" id="customerAddress" name="address" class="form-control" required />
+                        <label for="customerPhone">Telefon raqam</label>
+                        <input type="text" id="customerPhone" name="phone" value="+998" class="form-control phone" required>
                       </div>
-                      <div class="row">
-                        <div class="col-6">
-                          <div class="form-group">
-                            <label for="customerAddress">Hududni tanlang</label>
-                            <select name="" class="form-select" style="border-radius: 0;height:50px">
-                              <option value="">Tanlang</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-6">
-                          <div class="form-group">
-                            <label for="count">Buyurtma soni</label>
-                            <input type="number" id="count" name="" class="form-control" required>
-                          </div>
-                        </div>
+                      <div class="form-group">
+                        <label for="customerAddress">Email</label>
+                        <input type="email" id="customerAddress" name="address" class="form-control" required />
                       </div>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bekor qilish</button>
-                      <button type="submit" class="btn btn-primary">Qo'shish</button>
+                      <button type="submit" class="btn btn-primary">Saqlash</button>
                     </div>
                   </form>
                 </div>

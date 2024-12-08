@@ -109,75 +109,51 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title"> Chart-js </h3>
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Charts</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Chart-js</li>
-                </ol>
-              </nav>
+              <h3 class="page-title"> Statistika </h3>
             </div>
             <div class="row">
-              <div class="col-lg-6 grid-margin stretch-card">
+              <div class="col-lg-4 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Line chart</h4>
-                    <canvas id="lineChart" style="height:250px"></canvas>
+                    <h4 class="card-title w-100 text-center">Balans</h4>
+                    <h1 class="w-100 text-center">12 000 so'm</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title w-100 text-center">Mavjud SMS Paketi</h4>
+                    <h1 class="w-100 text-center">125</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title w-100 text-center">Tarif rejasi(Har bir buyurtma uchun)</h4>
+                    <h1 class="w-100 text-center">250 so'm</h1>
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Bar chart</h4>
-                    <canvas id="barChart" style="height:230px"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Area chart</h4>
-                    <canvas id="areaChart" style="height:250px"></canvas>
+                    <h4 class="card-title">Kunlik Buyurtmalar</h4>
+                    <canvas id="KunlikBuyurtmalar" style="height:250px"></canvas>
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Doughnut chart</h4>
-                    <div class="doughnutjs-wrapper d-flex justify-content-center">
-                      <canvas id="doughnutChart"></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Pie chart</h4>
-                    <div class="doughnutjs-wrapper d-flex justify-content-center">
-                      <canvas id="pieChart"></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Scatter chart</h4>
-                    <canvas id="scatterChart" style="height:250px"></canvas>
+                    <h4 class="card-title">Oylik Buyurtmalar</h4>
+                    <canvas id="OylikBuyurtmalar" style="height:250px"></canvas>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- content-wrapper ends -->
-          <!-- partial:partials/_footer.html -->
           <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
               <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024 Stellar. All rights reserved. <a href="#"> Terms of use</a><a href="#">Privacy Policy</a></span>
@@ -215,7 +191,79 @@
         $('#customerTable').DataTable();
       });
       $(".phone").inputmask("+999 99 999 9999");
+
+      $(function() {
+        'use strict';
+        var data2 = {
+          labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
+          datasets: [{
+            label: 'Buyurtmalar',
+            data: [10, 19, 3, 5, 2, 3],
+            borderWidth: 1,
+            fill: false
+          },{
+            label: 'Qabul Qilindi',
+            data: [1, 9, 3, 5, 2, 3],
+            borderWidth: 1,
+            fill: false
+          },{
+            label: 'Yetqazildi',
+            data: [10, 19, 13, 5, 2, 3],
+            borderWidth: 1,
+            fill: false
+          }]
+        };
+        var options2 = {
+          scales: {y: {ticks: {beginAtZero: true}}},
+          legend: {display: false},
+          elements: {line:{tension: 0.5},point: {radius: 0}}
+        };
+        if ($("#KunlikBuyurtmalar").length) {
+          var lineChartCanvas2 = $("#KunlikBuyurtmalar").get(0).getContext("2d");
+          var lineChart = new Chart(lineChartCanvas2, {
+            type: 'line',
+            data: data2,
+            options: options2
+          });
+        }
+
+        var data = {
+          labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
+          datasets: [{
+            label: 'Buyurtmalar',
+            data: [10, 19, 3, 5, 2, 3],
+            borderWidth: 1,
+            fill: false
+          },{
+            label: 'Qabul Qilindi',
+            data: [1, 9, 3, 5, 2, 3],
+            borderWidth: 1,
+            fill: false
+          },{
+            label: 'Yetqazildi',
+            data: [10, 19, 13, 5, 2, 3],
+            borderWidth: 1,
+            fill: false
+          }]
+        };
+        var options = {
+          scales: {y: {ticks: {beginAtZero: true}}},
+          legend: {display: false},
+          elements: {line:{tension: 0.5},point: {radius: 0}}
+        };
+        if ($("#OylikBuyurtmalar").length) {
+          var lineChartCanvas = $("#OylikBuyurtmalar").get(0).getContext("2d");
+          var lineChart = new Chart(lineChartCanvas, {
+            type: 'line',
+            data: data,
+            options: options
+          });
+        }
+
+      });
+
+
     </script>
-    <script src="assets/js/chart.js"></script>
+    
   </body>
 </html>

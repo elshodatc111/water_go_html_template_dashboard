@@ -123,7 +123,30 @@
                 <p class="ms-auto mb-0">Barcha buyurtmachilar</p>
               </div>
               <div class="card-body">
-                
+                <table class="table table-bordered text-center">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Kompaniya</th>
+                      <th>Drektor</th>
+                      <th>Balans</th>
+                      <th>To'lov summasi</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <a href="company_show.html" class="btn btn-primary p-1"><i class="fa fa-eye"></i></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
             <div class="modal fade" id="addCustomerModal" tabindex="-1" aria-labelledby="addCustomerModalLabel" aria-hidden="true">
@@ -135,39 +158,21 @@
                   </div>
                   <form id="addCustomerForm">
                     <div class="modal-body">
-                      <div class="row">
-                        <div class="col-6">
-                          <div class="form-group">
-                            <label for="customerName">Buyurtmachi FIO</label>
-                            <input type="text" id="customerName" name="name" class="form-control" required />
-                          </div>
-                        </div>
-                        <div class="col-6">
-                          <div class="form-group">
-                            <label for="customerPhone">Telefon raqam</label>
-                            <input type="text" id="customerPhone" name="phone" value="+998" class="form-control phone" required>
-                          </div>
-                        </div>
-                      </div>
                       <div class="form-group">
-                        <label for="customerAddress">Yashash manzil</label>
+                        <label for="customerAddress">Kompaniya nomi</label>
                         <input type="text" id="customerAddress" name="address" class="form-control" required />
                       </div>
-                      <div class="row">
-                        <div class="col-6">
-                          <div class="form-group">
-                            <label for="customerAddress">Hududni tanlang</label>
-                            <select name="" class="form-select" style="border-radius: 0;height:50px">
-                              <option value="">Tanlang</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-6">
-                          <div class="form-group">
-                            <label for="count">Buyurtma soni</label>
-                            <input type="number" id="count" name="" class="form-control" required>
-                          </div>
-                        </div>
+                      <div class="form-group">
+                        <label for="customerAddress">Drektor</label>
+                        <input type="text" id="customerAddress" name="address" class="form-control" required />
+                      </div>
+                      <div class="form-group">
+                        <label for="customerAddress">Drektor telefon raqami</label>
+                        <input type="text" id="customerAddress" name="address" value="+998" class="form-control phone" required />
+                      </div>
+                      <div class="form-group">
+                        <label for="customerAddress">Kompaniya manzili</label>
+                        <input type="text" id="customerAddress" name="address" class="form-control" required />
                       </div>
                     </div>
                     <div class="modal-footer">
